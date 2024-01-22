@@ -1,0 +1,30 @@
+.navbars{
+  width: 100%;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+.show{
+  margin-top: 50px;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 660px;
+  margin: 30px auto;
+}
+.btn{
+width: 100px;
+}
+.flexbtn{
+  margin-top: 10px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.changes{
+  width: 100px;
+  padding: 10px;
+  margin: 10px 0;
+  display: flex;
+  align-items: flex-start;
+}
