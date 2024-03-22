@@ -3,9 +3,9 @@
   padding: 10px 0;
   margin-bottom: 10px;
 }
-.show{
+/* .show{
   margin-top: 50px;
-}
+} */
 .container{
   display: flex;
   flex-direction: column;

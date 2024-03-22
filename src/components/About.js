@@ -1,33 +1,39 @@
-import React, {useState} from 'react'
+import React from 'react'
 
 export default function About(props) {
-    const [insides,upsetbtn] = useState({
-        border : "1px solid white",
-        color : "white",
-        backgroundColor : "blue"
-    })
-    const togglebtn = () =>{
-        if(insides.color === 'white'){
-            upsetbtn({
-                color : "yellow",
-                backgroundColor : "#7c18da"
-            })
-        }
-        else{
-            upsetbtn({
-                color : "white",
-                backgroundColor : "blue"
-            })
-        }
-    }
-    let stylels = {
-        border: "1px solid red",
-        color : "blue",
-        backgroundColor : "brown"
-    }
+    // const [insides,upsetbtn] = useState({
+    //     border : "1px solid white",
+    //     color : "white",
+    //     backgroundColor : "blue"
+    // })
+
+let insides = {
+  color : props.mode === 'dark' ? 'white' :'#042743',
+  backgroundColor : props.mode  === 'dark' ? 'rgb(36 74 104)' : 'white'
+}
+
+    // const togglebtn = () =>{
+    //     if(insides.color === 'white'){
+    //         upsetbtn({
+    //             color : "yellow",
+    //             backgroundColor : "#7c18da"
+    //         })
+    //     }
+    //     else{
+    //         upsetbtn({
+    //             color : "white",
+    //             backgroundColor : "blue"
+    //         })
+    //     }
+    // }
+    // let stylels = {
+    //     border: "1px solid red",
+    //     color : "blue",
+    //     backgroundColor : "brown"
+    // }
    
   return (
-    <div className='container' style={stylels}>
+    <div className='container' style={{color : props.mode === 'dark'? 'white':'#042743'}}>
         <h1>{props.title}</h1>
     <div className="accordion" id="accordionExample">
   <div className="accordion-item" style={insides}>
@@ -67,7 +73,7 @@ export default function About(props) {
     </div>
   </div>
 </div>
-<button onClick={togglebtn} className='changes btn btn-primary'>change</button>
+{/* <button onClick={togglebtn} className='changes btn btn-primary'>change</button> */}
 </div>
   )
 }

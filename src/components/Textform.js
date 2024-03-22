@@ -3,14 +3,14 @@ import React, {useState} from 'react'
 export default function Textform(props) {
     const [set, upset] =useState("welcome to subharti university");
     const headerup = () =>{
-console.log("hello .................");
+// console.log("hello .................");
 let headups = set.toUpperCase();
 upset(headups);
 props.showalert("dark mode has been enabled", "success");
 
     }
     const headerText = (event) =>{
-        console.log("react");
+        // console.log("react");
         upset(event.target.value);
     }
     const headdown = () =>{
@@ -26,9 +26,8 @@ props.showalert("dark mode has been enabled", "success");
 
     }
     const select = ()=>{
-        let box = document.getElementById("textbox");
-        box.select();
-        navigator.clipboard.writeText(box.value);
+       
+        navigator.clipboard.writeText(set);
     }
     const extra = () =>{
         let space = set.split(/[ ]+/);
@@ -38,7 +37,9 @@ props.showalert("dark mode has been enabled", "success");
         <div>
             <div className="container">
                 <h1 className={`text-${props.mode === 'black'?'light':'black'}`}>{props.txt}</h1>
-                <textarea id="textbox" value={set} onChange={headerText} rows="10">{props.txt}</textarea>
+                <textarea id="textbox" value={set} onChange={headerText} 
+                style={{backgroundColor: props.mode === 'dark'?'#13466e':'white', color : props.mode === 'light' ? 'green':'blue' }}
+                rows="10">{props.txt}</textarea>
                 <div className='flexbtn'>
                     <button onClick={headerup} className='btn btn-primary'>clickup</button>
                     <button onClick={headdown} className='btn btn-primary'>clickdown</button>
@@ -48,7 +49,10 @@ props.showalert("dark mode has been enabled", "success");
                     <button className='btn btn-primary'>clickup</button>
                 </div>
             </div>
+<p style={{color : props.mode === 'dark'? 'white':'#042743'}}>words {set.split(/\s+/).filter((element) => {return element.length !== 0}).length} <b></b> and characters {set.length}</p>
+<p style={{color : props.mode === 'dark' ? 'white' :'#042743'}} > {0.008 * set.split(" ").length} minute times</p>
 
+<p style={{color : props.mode === 'dark' ? 'white' :'green'}} >{set.length> 0 ? set : "Enter the details"} </p>
         </div>
     )
 }
